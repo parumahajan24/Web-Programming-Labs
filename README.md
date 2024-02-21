@@ -8,6 +8,7 @@ This is all the lab work I have done in CS 546 (Web Programming 1) Fall 2022 ter
 ##### Lab 03 - Asynchronous Programming in JS
 ##### Lab 04 - MongoDB
 ##### Lab 05 - JSON Routes and Axios
+##### Lab 06 - Movies API
 
 ### Let's connect on LinekdIn: https://www.linkedin.com/in/parulmahajan24/
 
