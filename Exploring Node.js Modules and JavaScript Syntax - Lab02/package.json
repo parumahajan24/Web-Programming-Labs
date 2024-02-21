@@ -1,0 +1,12 @@
+{
+  "name": "cs-546-lab-2",
+  "version": "1.0.0",
+  "description": "it is my first node application in web programming course",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Parul Mahajan 20010763",
+  "license": "ISC"
+}
