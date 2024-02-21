@@ -3,6 +3,6 @@ This is all the lab work I have done in CS 546 (Web Programming 1) Fall 2022 ter
 
 ## All the labs grow in difficulty level from Lab 1 to Lab 10
 
-### Let's conenct on LinekdIn: https://www.linkedin.com/in/parulmahajan24/
+### Let's connect on LinekdIn: https://www.linkedin.com/in/parulmahajan24/
 
 Enjoy :)
