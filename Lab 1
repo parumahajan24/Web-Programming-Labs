@@ -7,7 +7,8 @@ You must submit your files with the format specified, named as specified: lab1.j
 In this file, you will update the content of the functions and update the firstName, lastName, and studentId with the appropriate information.
 # Functions to implement
 1. questionOne(arr);
-For your first function, you will calculate if each and every element in the array is a prime number. Your function will return an array that has boolean values corresponding to the original index of the input.  That means that in lab1.test.js, running lab1.questionOne([5, 3, 10]) would return [true, true, false].
+For your first function, you will calculate if each and every element in the array is a prime number. Your function will return an array that has boolean values 
+corresponding to the original index of the input.  That means that in lab1.test.js, running lab1.questionOne([5, 3, 10]) would return [true, true, false].
 To test this function, you will log the result of 5 calls to lab1.questionOne([x, y, z]) with different inputs.
 2. questionTwo(startingNumber, commonRatio, numberOfTerms);
 This function will sum a Geometric SeriesLinks to an external site. 
