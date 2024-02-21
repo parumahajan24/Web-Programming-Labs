@@ -1,0 +1,94 @@
+CS-546 Lab 3
+The purpose of this lab is to familiarize yourself with asynchronous programming in JavaScript, as well as using modules from the Node.js Package Manager (npm (Links to an external site.)).
+
+For this lab, you must use the async/await keywords (not Promises). You will also be using axios (Links to an external site.), which is a HTTP client for Node.js; you can install it with npm i axios.
+
+In addition, you must have error checking for the arguments of all your functions. If an argument fails error checking, you should throw a string describing which argument was wrong, and what went wrong.
+
+You will be creating three .js files: people.js, companies.js and app.js.
+
+# # Network JSON Data
+You will be downloading JSON files from the following GitHub Gists:
+
+people.jsonhttps://gist.githubusercontent.com/graffixnyc/448017f5cb43e0d590adb744e676f4b5/raw/495e09557914db5d2f40141aaef60113eb19bb41/people.json
+companies.json https://gist.githubusercontent.com/graffixnyc/90b56a2abf10cfd88b2310b4a0ae3381/raw/f43962e103672e15f8ec2d5e19106e9d134e33c6/companies.json
+For every function you write, you will download the necessary JSONs with axios. 
+
+*** DO NOT just save the data into a local file, you MUST use Axios to get the data. ***
+
+1. people.js
+This file will export the following functions:
+
+1.1 getPersonById(id)
+This will return the person object for the specified id within the people.json array.  Note: The id is case sensitive.
+
+You must check:
+That the id  parameter exists and is of proper type (string).  If not, throw an error.
+If the id exists and is in the proper type but  the id is not found in the array of people, throw a 'person not found' error.
+if the id  parameter is just empty spaces, throw an error. 
+
+1.2 sameJobTitle(jobTitle)
+For this function, you will return an array of people objects who have the same job title from people.json.    You must return at least two people, so if there are not 2 or more people that have the same job title for the jobTitle provided you will throw an error. 
+
+You must check:
+That the jobTitle parameter exists and is of proper type (string). If not, throw an error.
+If there are not at least two people that have the same job title the jobTitle provided , you will throw an error.
+if jobTitle is just empty spaces, throw an error. 
+The jobTitle parameter must be case in-sensitive i.e. sameJobTitle("Help Desk Operator") should return the same results as passing sameJobTitle("HELP DESK OPERATOR")
+
+1.3 getPostalCodes(city, state)
+This function will take in the city and state and it will return an array of all the postal_codes for that city and state in the data, You will sort the returned array from lowest numbered postal_code to highest numbered postal_code.  The same postal_code may appear in the data more than once. You will return ALL for that city and state, even if it appears multiple times in the data. 
+
+Note: In the returned data the postal_code is a string, notice the elements in the example below are numbers. Your function must return them as such 
+
+That the city and state parameters exists and are of proper type (strings). If not, throw an error.  
+if city or state  are just empty spaces, throw an error. 
+The city and state parameters must be case in-sensitive i.e. getPostalCodes("Austin", "Texas") should return the same results as passing getPostalCodes("AUSTIN", "TEXAS")
+If there are no postal_codes for a given city and state, throw an error 
+
+1.4 sameCityAndState(city, state)
+This function will take in the city and state and it will return an array of strings with all the people who live in that city in that state. You will show each person's first and last name as one string for each person as shown in the output below. You will sort the names in the array alphabetically by last name  You must return at least two people, so if there are not 2 or more people that live in the same city and state you will throw an error. 
+
+You must check:
+That the city and state parameters exists and are of proper type (strings). If not, throw an error.  
+If there are not at least two people that live in the city and state provided, you will throw an error.
+if city or state  are just empty spaces, throw an error. 
+The city and state parameters must be case in-sensitive i.e. sameCityAndState("Austin", "Texas") should return the same results as passing sameCityAndState("AUSTIN", "TEXAS")
+
+2. companies.js
+This file will export the following three functions:
+
+2.1 listEmployees(companyName)
+For this function, you will return an object  for the companyName provided. You will return an object that has the company data for the companyName provided,  and you will also add an employees key/property to the return object that has an array of all the names ("firstName lastName") of people who work for that company, you will look up that company_id  in  people.json. company_id in people will be a company's id from companies.js.  If there are no employees for the given companyName then just return an empty array.  You will sort the employee names in the array alphabetically by last name  
+
+You must check:
+That companyName  parameter exists and is of the proper type (string). If not, throw an error.
+You must check to make sure the companyName parameter is not just empty spaces:  If it is, throw an error.
+If the company cannot be found in companies.json for the supplied companyName parameter, then throw an error.
+Note: If a company has no employees, you will return the company object as is with an empty array for the employees key
+
+2.2 sameIndustry(industry)
+Given the industry provided, you will find all the companies from companies.json  that are in the same industry and return an array of the objects
+
+You must check:
+That industry  parameter exists and is of the proper type (string). If not, throw an error.
+You must check to make sure the industry parameter is not just empty spaces:  If it is, throw an error.
+If the industry cannot be found in companies.json for the supplied industry parameter, then throw an error.
+
+2.3 getCompanyById(id)
+This will return the Company for the specified id within the companies.json array.  Note: The id is case sensitive.
+
+You must check:
+That the id  parameter exists and is of proper type (string).  If not, throw an error.
+If the id exists and is in the proper type but  the id is not found in the array of companies, throw a 'company not found' error.
+if the id  parameter is just empty spaces, throw an error. 
+
+
+# # # app.js
+This file is where you will import your functions from the two other files and run test cases on your functions by calling them with various inputs.  We will not use this file for grading and is only for your testing purposes to make sure:
+
+1. Your functions in your 2 files are exporting correctly.
+
+2. They are returning the correct output based on the input supplied (throwing errors when you're supposed to, returning the right results etc..).
+
+Note: You will need an async function in your app.js file that awaits the calls to your function like the example below. You put all of your function calls within main each in its own try/catch block. and then you just call main().
